@@ -35,6 +35,17 @@ body {
     margin: 10px auto;
 }
 .tab {
-    padding: 10px 40px 10px 40px;
+    padding: 10px 45px 10px 45px;
     margin: auto;
+    cursor: pointer;
+}
+.menu-box {
+    width: 500px;
+    margin: 10px auto;
+    padding: 10px 25px 10px 25px;
+}
+.contact-box {
+    width: 500px;
+    margin: 10px auto;
+    padding: 10px 25px 10px 25px;
 }

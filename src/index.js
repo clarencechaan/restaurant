@@ -1,19 +1,23 @@
 import Logo from './logo.jpg'
 import './style.css';
+import createMenu from './menu.js'
+import createContact from './contact.js'
+import createAbout from './about.js'
 
-function component() {
+const content = document.getElementById("content");
+
+
+function createLogo() {
     const element = document.createElement('div');
     const myLogo = new Image();
     myLogo.classList = "logo";
 
     myLogo.src = Logo;
-
     element.appendChild(myLogo);
-
     return element;
 }
 
-function header() {
+function createHeader() {
     const header = document.createElement('h1');
     const headerBox = document.createElement('div');
     headerBox.classList = "translucent header-box"
@@ -25,7 +29,7 @@ function header() {
     return headerBox;
 }
 
-function tabs() {
+function createTabs() {
     const tabBox = document.createElement('div');
     const aboutTabBox = document.createElement('h3');
     const menuTabBox = document.createElement('h3');
@@ -33,6 +37,9 @@ function tabs() {
     aboutTabBox.classList = "tab translucent";
     menuTabBox.classList = "tab translucent";
     contactTabBox.classList = "tab translucent";
+    aboutTabBox.id = 'about-tab';
+    menuTabBox.id = 'menu-tab';
+    contactTabBox.id = 'contact-tab';
     aboutTabBox.innerHTML = "About Us";
     menuTabBox.innerHTML = "Menu";
     contactTabBox.innerHTML = "Contact"
@@ -44,22 +51,34 @@ function tabs() {
 
 }
 
-function about() {
-    const aboutBox = document.createElement('div');
-    const aboutHeader = document.createElement('h2');
-    const about = document.createElement('p');
-    aboutHeader.innerHTML = "About Us"
-    about.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    about.classList = "about-text";
-    aboutBox.classList = "translucent about-box";
-    aboutBox.appendChild(aboutHeader);
-    aboutBox.appendChild(about);
-    return aboutBox;
+function addEventListenersToTabs() {
+    const aboutTab = document.querySelector('#about-tab');
+    const menuTab = document.querySelector('#menu-tab');
+    const contactTab = document.querySelector('#contact-tab');
+
+    aboutTab.addEventListener('click', function() {
+        loadTab(createAbout())
+    });
+
+    menuTab.addEventListener('click', function() {
+        loadTab(createMenu())
+    });
+
+    contactTab.addEventListener('click', function() {
+        loadTab(createContact())
+    });
 }
 
-const content = document.getElementById("content");
+function loadTab(element) {
+    const viewingArea = document.getElementsByClassName("viewing-area");
+    while(viewingArea.length > 0){
+        viewingArea[0].parentNode.removeChild(viewingArea[0]);
+    }
+    content.appendChild(element);
+}
 
-content.appendChild(component());
-content.appendChild(header());
-content.appendChild(tabs());
-content.appendChild(about());
+content.appendChild(createLogo());
+content.appendChild(createHeader());
+content.appendChild(createTabs());
+content.appendChild(createAbout());
+addEventListenersToTabs();
