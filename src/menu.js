@@ -21,9 +21,9 @@ export default function createMenu() {
     bagelImg.src = Bagel;
     coffeeImg.src = Coffee;
     menuHeader.innerHTML = "Menu";
-    bltHeader.innerHTML = "B.L.T.";
-    bagelHeader.innerHTML = "Bagel";
-    coffeeHeader.innerHTML = "Coffee";
+    bltHeader.innerHTML = "B.L.T. - $6.00";
+    bagelHeader.innerHTML = "Bagel - $6.00";
+    coffeeHeader.innerHTML = "Coffee - $2.00";
     bltInfo.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     bagelInfo.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     coffeeInfo.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."

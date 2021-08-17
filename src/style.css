@@ -39,6 +39,9 @@ body {
     margin: auto;
     cursor: pointer;
 }
+.tab:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 .menu-box {
     width: 500px;
     margin: 10px auto;
