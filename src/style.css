@@ -49,3 +49,6 @@ body {
     margin: 10px auto;
     padding: 10px 25px 10px 25px;
 }
+.menu-item-img {
+    width: 300px;
+}

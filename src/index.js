@@ -48,7 +48,6 @@ function createTabs() {
     tabBox.appendChild(menuTabBox);
     tabBox.appendChild(contactTabBox);
     return tabBox;
-
 }
 
 function addEventListenersToTabs() {
